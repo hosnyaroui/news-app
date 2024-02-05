@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Hero = () => {
+const Hero = (setSearch) => {
+  const [name, setName] = useState("");
+
+  const searchnews = () => {
+    setSearch(name);
+  }
   return (
     <div>
       <header>
@@ -8,8 +13,8 @@ const Hero = () => {
 <div className='hero-banner'>
 <h4>News Store</h4>
 <p>All new news is an old news happening to new people</p>
-<input type='text' placeholder='' className='input-bar' />
-<button className='hero-btn'>search</button>
+<input type='text' placeholder='' className='input-bar' onChange={(e) => setName(e.target.value)} />
+<button className='hero-btn' onClick={() => searchnews}>Search</button>
         </div>
         </div>
       </header>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Category = ({setSearch}) => {
+const Category = ({ setSearch }) => {
   return (
     <div className='category'>
       <ul>
@@ -27,9 +27,8 @@ const Category = ({setSearch}) => {
 <li>
     <button className='btn btn-outline-primary' onClick={ () => setSearch("science") }>Science </button>
 </li>
-
-
       </ul>
+
     </div>
   )
 }
