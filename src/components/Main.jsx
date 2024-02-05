@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
-const Main = () => {
+const Main = ({search}) => {
         const [news, setNews] = useState([]);
 
 useEffect(() => {
-getNews();
-}, [])
+getNews(search);
+}, [search])
 
 
-const getNews = async () => {
-        const api = await fetch("https://newsapi.org/v2/top-headlines?q=general&apiKey=2d79f42db6694d78a9b08c7e12462bfc");
+const getNews = async (search) => {
+        const api = await fetch("https://newsapi.org/v2/top-headlines?q=" + search  + "&apiKey=2d79f42db6694d78a9b08c7e12462bfc");
         const data = await api.json();
         setNews(data.articles);
 console.log(data.articles);
